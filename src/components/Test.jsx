@@ -4,6 +4,9 @@ import { useState } from "react";
 // components
 import Result from "./Result";
 
+// toast
+import toast from "react-hot-toast";
+
 function Test({ questions: { color, icon, questions, title } }) {
   const [answeredQuestions, setAnsweredQuestions] = useState(1);
   const [correctAnswerCount, setCorrectAnswerCount] = useState(0);
@@ -17,7 +20,7 @@ function Test({ questions: { color, icon, questions, title } }) {
     e.preventDefault();
     const correctAnswer = questions[questionIndex].answer;
     if (selectedAnswer === null) {
-      alert("Please, select an answer!");
+      toast.error("Please, select an answer!", {icon: '⚠️'});
     } else {
       if (selectedAnswer === correctAnswer) {
         setAnswerStatus("correct");
@@ -40,6 +43,7 @@ function Test({ questions: { color, icon, questions, title } }) {
   };
 
   if (questionIndex === questions.length) {
+    toast.success('Successfully toasted!', {icon: "🎉"})
     return (
       <>
         <Result
