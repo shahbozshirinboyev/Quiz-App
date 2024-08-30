@@ -1,23 +1,22 @@
 import { useState, useEffect } from "react";
 
 const modeFromLocalStorege = () => {
-  return localStorage.getItem('darkMode') || 'light';
-}
-
+  return localStorage.getItem("darkMode") || "light";
+};
 
 function Navbar() {
   const [theme, setTheme] = useState(modeFromLocalStorege());
 
   // theme toggle function
   const handleThemeToggle = () => {
-    const newTheme = theme === 'dark-mode' ? 'light' : 'dark-mode';
+    const newTheme = theme === "dark-mode" ? "light" : "dark-mode";
     setTheme(newTheme);
   };
 
   useEffect(() => {
-    document.body.classList = '';
+    document.body.classList = "";
     document.body.classList.add(theme);
-    localStorage.setItem('darkMode', theme)
+    localStorage.setItem("darkMode", theme);
   }, [theme]);
 
   return (
@@ -26,7 +25,7 @@ function Navbar() {
         <div>1</div>
         <div>
           <div className="dark-btn" onClick={handleThemeToggle}>
-            <input type="checkbox" />
+            <input type="checkbox" checked={theme === "dark-mode"} />
             <span>
               <span></span>
               <span></span>
