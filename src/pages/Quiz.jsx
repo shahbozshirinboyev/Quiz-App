@@ -23,7 +23,7 @@ function Quiz() {
     isPending,
     error,
   } = useFetch(
-    `https://run.mocky.io/v3/85d154a6-2e13-4ac1-aeb2-1e246e684fa5?title=${title}`
+    `https://api.jsonsilo.com/public/5fc53cbb-a0bc-41d1-89c6-62861746ac4b`
   );
 
   let index = 0;

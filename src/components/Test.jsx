@@ -43,7 +43,7 @@ function Test({ questions: { color, icon, questions, title } }) {
   };
 
   if (questionIndex === questions.length) {
-    toast.success("Successfully toasted!", { icon: "🎉" });
+    toast.success("Successfully!", { icon: "🎉" });
     return (
       <>
         <Result

@@ -7,6 +7,7 @@ export function useFetch(url) {
 
   useEffect(() => {
     const fetchData = async () => {
+      // loading start
       setIsPending(true);
       try {
         const req = await fetch(url);
@@ -16,10 +17,12 @@ export function useFetch(url) {
         }
         const data = await req.json();
         setData(data);
+        // loading end 1
         setIsPending(false);
       } catch (err) {
         setError(err.message);
         console.log(err.message);
+        // loading end 2
         setIsPending(false);
       }
     };
