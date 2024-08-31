@@ -9,6 +9,7 @@ import { useEffect } from "react";
 
 // components
 import { Test } from "../components";
+import Loader from "../components/loader/Loader";
 
 function Quiz() {
 
@@ -41,7 +42,7 @@ function Quiz() {
 
   return (
     <section className="quiz-container container">
-      {isPending && <h3>Loading...</h3>}
+      {isPending && <Loader />}
       {error && <h3>{error.message}</h3>}
       {quizzes && <Test questions={quizzes.quizzes[index]} /> }
     </section>
